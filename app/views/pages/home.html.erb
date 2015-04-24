@@ -1,5 +1,19 @@
 <% provide(:title, '') %>
+<% if signed_in? %>
+	<div class="row">
+		<div class="col-md-3" id = "profile">
+			<%= render 'components/user_info' %>
+			<%= render 'components/micropost_form' %>
+		</div>
+
+		<div class="col-md-9">
+			<h3>Micropost Feed</h3>
+			<%= render 'components/feed' %>
+		</div>
+	</div>
+<% else %>
 <div class="center hero-unit">
 	<h1>Welcome to the XXXBlog!</h1>
 	<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
 </div>
+<% end %>

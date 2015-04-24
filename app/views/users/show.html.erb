@@ -1,6 +1,17 @@
 <% provide(:title, @user.name) %>
 
-<div class="container" id = "profile">
-	<%= avatar_for @user %>
-	<h1><%= @user.name %><h1>
+<div class="row">
+	<div class="col-md-3" id = "profile">
+		<%= avatar_for @user %>
+		<h1><%= @user.name %></h1>
+	</div>
+	<div class="col-md-9">
+		<% if @user.microposts.any? %>
+			<h3>Microposts (<%= @user.microposts.count %>)</h3>
+			<ol class="microposts">
+				<%= render @microposts %>
+			</ol>
+			<%= will_paginate @microposts, renderer: BootstrapPagination::Rails %>
+		<% end %>
+	</div>
 </div>

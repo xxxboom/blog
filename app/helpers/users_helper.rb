@@ -8,7 +8,7 @@ module UsersHelper
 
 	# ONLY JPG AND PNG
 	def avatar_for(user, size = 50)
-		avatar = "users/#{user.email}";
+		avatar = "users/#{user.email}"
 		exts = %w[jpg png gif]
 		image = "users/default.png"
 		exts.each do |ext|
