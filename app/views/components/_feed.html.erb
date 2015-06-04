@@ -1,6 +1,6 @@
 <% if @feed_items.any? %>
-	<ol class="microposts">
+	<ul class="microposts">
 		<%= render partial: 'components/feed_item', collection: @feed_items %>
-	</ol>
-	<%= will_paginate @feed_items %>
+	</ul>
+	<%= will_paginate @feed_items, renderer: BootstrapPagination::Rails %>
 <% end %>

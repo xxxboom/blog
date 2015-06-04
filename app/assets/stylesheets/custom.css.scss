@@ -4,7 +4,7 @@
 /* Vars */
 
 $gray-medium-light: #eaeaea;
-
+$blue: #3232ff;
 /* universal */
 
 html {
@@ -71,39 +71,9 @@ footer {
   }
 }
 
-/* sidebar */
-
-/* CORRECT THIS - IT IS A FUCKING SHIT! */
-/*aside {
-  section {
-    padding: 10px 0;
-    border-top: 1px solid $gray-lighter;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 3.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}*/
-
 #profile
 {
   align: center;
-  /*.avatar {
-    margin-left: 25%;
-    margin-top: 25%;
-  }*/
   text-align: center;
   input {
     margin: 20px 0;
@@ -136,10 +106,14 @@ footer {
 .users {
   list-style: none;
   margin: 0;
+  padding: 0;
   li {
     overflow: auto;
-    padding: 10px 0;
+    padding: 3px 0;
     border-top: 1px solid $gray-lighter;
+    .avatar {
+      margin: 3px 30px;
+    }
     &:last-child {
       border-bottom: 1px solid $gray-lighter;
     }
@@ -149,12 +123,19 @@ footer {
 /* microposts */
 
 .microposts {
+  
   list-style: none;
-  margin: 10px 0 0 0;
-
+  margin: 0;
+  padding: 0;
   li {
-    padding: 10px 0;
+    .content {
+      padding-bottom: 2px;
+    }
+    margin-top: 10px;
     border-top: 1px solid #e8e8e8;
+  }
+  .avatar {
+    margin: 10px 10px;
   }
 }
 .content {
@@ -163,9 +144,52 @@ footer {
 .timestamp {
   color: $gray-light;
 }
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
+
+/* sidebar */
+
+.stats {
+  overflow: auto;
+  padding-left: 25%;
+  padding-top: 20px;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.avatar {
+  overflow: auto;
+}
+
+.user_avatars {
+  overflow: auto;
+}
+
+.hero-unit {
+  height: 250px;
+  text-align: center;
+  padding-top: 70px;
+  color: #FFFFE0;
+  background: url(cloud.jpg) no-repeat;  
+  background-position: center;
+}
+
+.about, .help-page {
+  text-align: center;
+  p {
+    font-size: 16px;
   }
 }

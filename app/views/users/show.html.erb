@@ -4,6 +4,9 @@
 	<div class="col-md-3" id = "profile">
 		<%= avatar_for @user %>
 		<h1><%= @user.name %></h1>
+		<%= render "components/stats" %>
+		<%= render "follow_form" if signed_in? %><br>
+		<%= link_to "View other SP-users", users_path %>
 	</div>
 	<div class="col-md-9">
 		<% if @user.microposts.any? %>

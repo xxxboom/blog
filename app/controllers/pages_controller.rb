@@ -7,8 +7,10 @@ class PagesController < ApplicationController
 	end
 
 	def help
+
 	end
 	
 	def about
+		@cnt = User.count;
 	end
 end

@@ -1,9 +1,9 @@
 <li id="<%= feed_item.id %>">
 	<div class="row">
-		<div class="col-md-1">
-			<%= link_to avatar_for(feed_item.user, 150), feed_item.user %>
+		<div class="col-xs-2 col-md-1">
+			<%= link_to avatar_for(feed_item.user, 100), feed_item.user %>
 		</div>
-		<div class="col-md-11">
+		<div class="col-xs-10 col-md-11">
 			<span class="user">
 				<%= link_to feed_item.user.name, feed_item.user %>
 			</span>

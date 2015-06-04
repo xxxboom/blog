@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-md-3" id = "profile">
 			<%= render 'components/user_info' %>
+			<%= render 'components/stats' %>
 			<%= render 'components/micropost_form' %>
 		</div>
 
@@ -13,7 +14,7 @@
 	</div>
 <% else %>
 <div class="center hero-unit">
-	<h1>Welcome to the Rainbow blog!</h1>
-	<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
+	<h1>Join to the Space Party!</h1>
+	<%= link_to "Join!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 <% end %>
