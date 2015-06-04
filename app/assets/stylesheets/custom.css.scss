@@ -183,7 +183,8 @@ footer {
   text-align: center;
   padding-top: 70px;
   color: #FFFFE0;
-  background: url(cloud.jpg) no-repeat;  
+  background: no-repeat;
+  background-image: asset-data-url("cloud.jpg");
   background-position: center;
 }
 
