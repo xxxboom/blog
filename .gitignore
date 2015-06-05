@@ -8,12 +8,12 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
+log/
+tmp/
 !/log/.keep
-/tmp/*
 
 # Ignore secret tokens
-/config/secrets.yml
+config/secrets.yml
 
 .project
 .idea
