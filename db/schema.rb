@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511091726) do
+ActiveRecord::Schema.define(version: 20150605152649) do
 
   create_table "microposts", force: :cascade do |t|
     t.string   "content",    limit: 255
@@ -34,13 +34,17 @@ ActiveRecord::Schema.define(version: 20150511091726) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.string   "password_digest", limit: 255
-    t.string   "remember_token",  limit: 255
-    t.boolean  "admin",           limit: 1,   default: false
+    t.string   "name",                limit: 255
+    t.string   "email",               limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "password_digest",     limit: 255
+    t.string   "remember_token",      limit: 255
+    t.boolean  "admin",               limit: 1,   default: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

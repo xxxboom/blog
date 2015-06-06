@@ -1,5 +1,5 @@
 <li>
-	<%= link_to avatar_for(user, 12), user %>
+	<%= link_to avatar_for(user, :thumb), user %>
 	<%= link_to user.name, user %>
 	<% if current_user.admin? && !current_user?(user) %>
 		| <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>

@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="col-md-3" id = "profile">
-		<%= avatar_for @user %>
+		<%= avatar_for(@user, :medium) %>
 		<h1><%= @user.name %></h1>
 		<%= render "components/stats" %>
 		<%= render "follow_form" if signed_in? %><br>

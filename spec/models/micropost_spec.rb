@@ -26,7 +26,7 @@ RSpec.describe Micropost, type: :model do
 	end
 
 	describe "with content that is too long" do
-		before { @micropost.content = "X" * 257 }
+		before { @micropost.content = "X" * 256 }
 		it { should_not be_valid }
 	end
 

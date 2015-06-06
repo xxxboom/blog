@@ -10,7 +10,9 @@
 # Ignore all logfiles and tempfiles.
 log/
 tmp/
-!/log/.keep
+!log/.keep
+public/users/
+!public/cloud.jpg
 
 # Ignore secret tokens
 config/secrets.yml

@@ -2,7 +2,9 @@
 	<%= form_for(@micropost) do |f| %>
 		<%= render 'components/error_messages', object: f.object %>
 		<div class="field">
-			<%= f.text_area :content, placeholder: "What's happening?", class: "form-control", rows: 3 %>
+			<%= f.text_area :content, placeholder: "What's happening?", maxlength: @maxlength, 
+			class: "form-control", id: "micropost_area", rows: 3 %>
+			<span id="counter" data-maximum-length="<%= @maxlength %>"><%= @maxlength %></span>
 		</div>
 		<%= f.submit "Post", class: "btn btn-large btn-primary" %>
 	<% end %>

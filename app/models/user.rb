@@ -22,8 +22,13 @@ class User < ActiveRecord::Base
 	
 	has_secure_password
 	
-	#has_attached_file :avatar, :styles => { :medium => "300x300", :thumb => "100x100" }
-	#validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+	has_attached_file :avatar, :styles => { :medium => "200x200#", :thumb => "50x50#" },
+		:default_url => "users/:style/default.png"
+	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+	#validates :avatar, :attachment_presence => true
+	#validates_with AttachmentPresenceValidator, :attributes => :avatar
+	validates_with AttachmentSizeValidator, :attributes => :avatar, :less_than => 2.megabytes
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64

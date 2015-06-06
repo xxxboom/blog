@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :non_signed_in_user, only: [:new, :create]
 	before_action :signed_in_user, only: [:show, :index, :edit, :update, :destroy, :following, :followers]
 	before_action :correct_user, only: [:edit, :update]
 	before_action :admin_user, only: :destroy
@@ -44,9 +45,14 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		User.find(params[:id]).destroy
-		flash[:success] = "User deleted."
-		redirect_to users_url
+		user = User.find(params[:id])
+		if !user.admin 
+			user.destroy
+			flash[:success] = "User deleted."
+		else
+			flash[:danger] = "It's admin, and Nobody can delete him!"
+		end
+		redirect_to :back
 	end
 
 	def following
@@ -66,7 +72,7 @@ class UsersController < ApplicationController
 	private
 		
 		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation)
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
 		end
 
 		# Before filters

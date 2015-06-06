@@ -1,7 +1,7 @@
 <% provide(:title, @title) %>
 <div class="row">
 		<div class="col-md-3" id = "profile">
-			<%= link_to avatar_for(@user), @user %>
+			<%= link_to avatar_for(@user, :medium), @user %>
 			<h1><%= @user.name %></h1>
 			<div>
 				<span><%= link_to "view my profile", @user %></span><br>
@@ -11,7 +11,7 @@
 			<% if @users.any? %>
 				<div class="user_avatars">
 					<% @users.each do |user| %>
-						<%= link_to avatar_for(user,  10), user %>
+						<%= link_to avatar_for(user, :thumb), user %>
 					<% end %>
 				</div>
 			<% end %>
