@@ -37,7 +37,7 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 # Paperclip for work with images
 gem 'paperclip', '~> 4.2'
 # Amazon s3
-gem 'aws-sdk', '~> 2.0.48'
+gem 'aws-sdk', '<2.0'
 
 group :development, :test do
 	gem 'rspec-rails', '>= 3.0.0'
