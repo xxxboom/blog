@@ -150,12 +150,11 @@ footer {
 
 .stats {
   overflow: auto;
-  padding-left: 25%;
-  padding-top: 20px;
+  margin: 10px auto;
   a {
-    float: left;
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
+    display: inline-block;
     color: gray;
     &:first-child {
       padding-left: 0;

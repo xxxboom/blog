@@ -86,4 +86,6 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+  # Automatically replace files with their equivalent gzip compressed version
+  config.gzip_compression = true
 end
