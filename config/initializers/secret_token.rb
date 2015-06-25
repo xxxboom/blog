@@ -10,10 +10,6 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 
-# CHECK IT
-# comment - 'Гавно какое-то'
-
-=begin
 require 'securerandom'
 
 def secure_token
@@ -29,5 +25,4 @@ def secure_token
   end
 end
 
-SampleApp::Application.config.secret_key_base = secure_token
-=end
+Spaceparty::Application.config.secret_key_base = secure_token
